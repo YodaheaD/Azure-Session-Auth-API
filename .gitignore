@@ -3,9 +3,9 @@ index.js
 
 package-lock.json
 
-auth.js
-mytablelike.js
-users.js
+**/auth.js
+**/mytablelike.js
+**/users.js
 
 tsconfig.json
-logger.js
+**/logger.js
