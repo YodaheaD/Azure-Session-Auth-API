@@ -37,6 +37,8 @@ authRouter.use(cookieParser());
 
 var session;
 
+// #swagger.basePath = ['/auth']
+
 //session middleware
 const oneDay = 1000 * 60 * 60 * 24;
 const tenSeconds = 1000 * 10;
@@ -68,6 +70,7 @@ authRouter.post("/register", async (req: Request, res: Response) => {
   res.send("Username already exists. Try a different one.")
   Logger.warn("\n -> Username already exists. Try a different one.")
 }
+// #swagger.tags = ['Auth']
 });
 
 // -> Login
@@ -107,6 +110,7 @@ authRouter.post("/login", async (req: Request, res: Response) => {
       message: "Invalid username or password",
     });
   }
+  // #swagger.tags = ['Auth']
 });
 // -> Logout
 
@@ -128,6 +132,7 @@ authRouter.get("/logout", async (req: Request, res: Response) => {
   res.send(
     `The user ${currUser} has been logged out.`
   );
+  // #swagger.tags = ['Auth']
 });
 
 
@@ -139,4 +144,5 @@ authRouter.get("/return", async (req: Request, res: Response) => {
     )} has been logged out.`
   );
 }
+// #swagger.tags = ['Testing']
 );
